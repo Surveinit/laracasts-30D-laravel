@@ -1,18 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Job;
+use App\Models\JobListing;
 
 Route::get('/', function () {
     return view('home');
 });
 
 Route::get('/jobs', function () {
-    return view('jobs', ['jobs' => Job::all()]);
+    return view('jobs', ['jobs' => JobListing::all()]);
 });
 
 Route::get('/jobs/{id}', function ($id) {
-    $job = Job::find($id);
+    $job = JobListing::find($id);
     return view('job', ['job' => $job]);
 });
 
